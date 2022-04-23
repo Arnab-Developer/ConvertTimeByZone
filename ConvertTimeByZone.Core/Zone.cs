@@ -1,9 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConvertTimeByZone.Core;
+﻿namespace ConvertTimeByZone.Core;
 
 public record Zone(string Id, string Name);

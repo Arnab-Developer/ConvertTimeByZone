@@ -1,15 +1,25 @@
-﻿using System.Collections.ObjectModel;
-
-namespace ConvertTimeByZone.Core;
+﻿namespace ConvertTimeByZone.Core;
 
 public class ConvertTime : IConvertTime
 {
     IEnumerable<Zone> IConvertTime.GetAllTimeZones() =>
-        TimeZoneInfo.GetSystemTimeZones().Select(timeZone => new Zone(timeZone.Id, timeZone.DisplayName));
+        TimeZoneInfo
+            .GetSystemTimeZones()
+            .Select(timeZone => new Zone(timeZone.Id, timeZone.DisplayName));
 
-    DateTime IConvertTime.GetConvertedDateTime(DateTime dateTimeToBeConverted, TimeZoneInfo sourceTimeZone,
-        TimeZoneInfo destinationTimeZone)
+    DateTime IConvertTime.GetConvertedDateTime(
+        DateTime dateTimeToBeConverted,
+        string sourceTimeZoneId,
+        string destinationTimeZoneId)
     {
-        throw new NotImplementedException();
+        TimeZoneInfo sourceTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(sourceTimeZoneId);
+        TimeZoneInfo destinationTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(destinationTimeZoneId);
+
+        DateTime convertedDateTime = TimeZoneInfo.ConvertTime(
+            dateTimeToBeConverted,
+            sourceTimeZoneInfo,
+            destinationTimeZoneInfo);
+
+        return convertedDateTime;
     }
 }
