@@ -19,9 +19,9 @@ public class ConvertTimeByZoneController : Controller
     [HttpGet]
     public IActionResult Index()
     {
-        IEnumerable<string> zoneNames = _convertTime.GetAllTimeZones();
-        IEnumerable<SelectListItem> selectListItems = zoneNames.Select(zoneName => new SelectListItem(zoneName, zoneName));
-        ConvertTimeByZoneModel model = new(selectListItems);
+        IEnumerable<Zone> zones = _convertTime.GetAllTimeZones();
+        IEnumerable<SelectListItem> zoneListItems = zones.Select(zone => new SelectListItem(zone.Name, zone.Id));
+        ConvertTimeByZoneModel model = new(zoneListItems);
         return View(model);
     }
 

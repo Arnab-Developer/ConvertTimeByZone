@@ -2,7 +2,7 @@
 
 public interface IConvertTime
 {
-    public IEnumerable<string> GetAllTimeZones();
+    public IEnumerable<Zone> GetAllTimeZones();
 
     public DateTime GetConvertedDateTime(DateTime dateTimeToBeConverted, TimeZoneInfo sourceTimeZone,
         TimeZoneInfo destinationTimeZone);
