@@ -34,7 +34,7 @@ public class ConvertTimeTest
     }
 
     [Fact]
-    public void Can_GetConvertedDateTime_ThrowExceptionWithInvalidSourceTimeZoneId()
+    public void Can_GetConvertedDateTime_ThrowException_WithInvalidSourceTimeZoneId()
     {
         DateTime actualDateTime = new(2022, 04, 5, 10, 15, 0, DateTimeKind.Unspecified);
         DateTime expectedDateTime = new(2022, 04, 6, 1, 15, 0, DateTimeKind.Unspecified);
@@ -54,7 +54,7 @@ public class ConvertTimeTest
     }
 
     [Fact]
-    public void Can_GetConvertedDateTime_ThrowExceptionWithInvalidDestinationTimeZoneId()
+    public void Can_GetConvertedDateTime_ThrowException_WithInvalidDestinationTimeZoneId()
     {
         DateTime actualDateTime = new(2022, 04, 5, 10, 15, 0, DateTimeKind.Unspecified);
         DateTime expectedDateTime = new(2022, 04, 6, 1, 15, 0, DateTimeKind.Unspecified);
