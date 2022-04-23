@@ -6,7 +6,7 @@ using Moq;
 using Tynamix.ObjectFiller;
 using Xunit;
 
-namespace ConvertTimeByZone.Web.Test;
+namespace ConvertTimeByZone.Web.Test.Controllers;
 
 public class ConvertTimeByZoneControllerTest
 {
