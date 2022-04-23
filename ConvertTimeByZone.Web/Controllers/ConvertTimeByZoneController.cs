@@ -55,6 +55,8 @@ public class ConvertTimeByZoneController : Controller
             convertTimeByZoneModel.SourceTimeZone,
             convertTimeByZoneModel.DestinationTimeZone);
 
+        ViewData["ConvertedTime"] = convertedDateTime;
+
         return View();
     }
 
