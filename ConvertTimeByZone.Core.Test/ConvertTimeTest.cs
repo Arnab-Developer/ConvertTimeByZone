@@ -32,4 +32,44 @@ public class ConvertTimeTest
 
         Assert.Equal(expectedDateTime, convertedDateTime);
     }
+
+    [Fact]
+    public void Can_GetConvertedDateTime_ThrowExceptionWithInvalidSourceTimeZoneId()
+    {
+        DateTime actualDateTime = new(2022, 04, 5, 10, 15, 0, DateTimeKind.Unspecified);
+        DateTime expectedDateTime = new(2022, 04, 6, 1, 15, 0, DateTimeKind.Unspecified);
+
+        string sourceTimeZoneId = "";
+        string destinationTimeZoneId = "China Standard Time";
+
+        IConvertTime convertTime = new ConvertTime();
+
+        Assert.Throws<TimeZoneNotFoundException>(() =>
+        {
+            DateTime convertedDateTime = convertTime.GetConvertedDateTime(
+                actualDateTime,
+                sourceTimeZoneId,
+                destinationTimeZoneId);
+        });
+    }
+
+    [Fact]
+    public void Can_GetConvertedDateTime_ThrowExceptionWithInvalidDestinationTimeZoneId()
+    {
+        DateTime actualDateTime = new(2022, 04, 5, 10, 15, 0, DateTimeKind.Unspecified);
+        DateTime expectedDateTime = new(2022, 04, 6, 1, 15, 0, DateTimeKind.Unspecified);
+
+        string sourceTimeZoneId = "Pacific Standard Time";
+        string destinationTimeZoneId = "";
+
+        IConvertTime convertTime = new ConvertTime();
+
+        Assert.Throws<TimeZoneNotFoundException>(() =>
+        {
+            DateTime convertedDateTime = convertTime.GetConvertedDateTime(
+                actualDateTime,
+                sourceTimeZoneId,
+                destinationTimeZoneId);
+        });
+    }
 }
