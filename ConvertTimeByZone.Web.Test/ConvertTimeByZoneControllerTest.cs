@@ -18,15 +18,15 @@ public class ConvertTimeByZoneControllerTest
 
         string zoneId1 = Randomizer<string>.Create();
         string zoneName1 = Randomizer<string>.Create();
-        
+
         string zoneId2 = Randomizer<string>.Create();
         string zoneName2 = Randomizer<string>.Create();
 
         string zoneId3 = Randomizer<string>.Create();
         string zoneName3 = Randomizer<string>.Create();
 
-        IEnumerable<Zone> zones = new List<Zone>() 
-        { 
+        IEnumerable<Zone> zones = new List<Zone>()
+        {
             new Zone(zoneId1, zoneName1),
             new Zone(zoneId2, zoneName2),
             new Zone(zoneId3, zoneName3)
@@ -40,9 +40,9 @@ public class ConvertTimeByZoneControllerTest
 
         Assert.NotNull(viewResult);
         Assert.NotNull(viewResult!.Model);
-        
+
         ConvertTimeByZoneModel? model = viewResult.Model as ConvertTimeByZoneModel;
-        
+
         Assert.NotNull(model);
         Assert.NotNull(model!.ZoneListItems);
         Assert.Equal(3, model.ZoneListItems!.Count());
@@ -57,7 +57,7 @@ public class ConvertTimeByZoneControllerTest
         Assert.Equal(zoneName3, model.ZoneListItems!.ElementAt(2).Text);
 
         convertTimeMock
-            .Verify(v => v.GetAllTimeZones(), 
+            .Verify(v => v.GetAllTimeZones(),
                 Times.Once);
 
         convertTimeMock.VerifyNoOtherCalls();
@@ -96,8 +96,8 @@ public class ConvertTimeByZoneControllerTest
             .Setup(s => s.GetConvertedDateTime(sourceDateTime, "TimeZone1", "TimeZone2"))
             .Returns(destinationDateTime);
 
-        ConvertTimeByZoneModel convertTimeByZoneModel = new() 
-        { 
+        ConvertTimeByZoneModel convertTimeByZoneModel = new()
+        {
             DateTimeToBeConverted = sourceDateTime,
             SourceTimeZone = "TimeZone1",
             DestinationTimeZone = "TimeZone2"
@@ -159,7 +159,7 @@ public class ConvertTimeByZoneControllerTest
             DestinationTimeZone = "TimeZone2"
         };
 
-        Assert.Throws<ArgumentNullException>(() => 
+        Assert.Throws<ArgumentNullException>(() =>
             convertTimeByZoneController.Convert(convertTimeByZoneModel));
 
         convertTimeMock
