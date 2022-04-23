@@ -1,7 +1,6 @@
-﻿namespace ConvertTimeByZone.Core
-{
-    public class Class1
-    {
+﻿namespace ConvertTimeByZone.Core;
 
-    }
+public class Class1
+{
+
 }
