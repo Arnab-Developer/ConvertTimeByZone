@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertTimeByZone.Core", "ConvertTimeByZone.Core\ConvertTimeByZone.Core.csproj", "{0A4DD3F4-3DE6-4335-83FA-00EC8D6C9377}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertTimeByZone.Web", "ConvertTimeByZone.Web\ConvertTimeByZone.Web.csproj", "{E07CE988-C1FC-4F2A-B1AD-71683CAC8871}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A4DD3F4-3DE6-4335-83FA-00EC8D6C9377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A4DD3F4-3DE6-4335-83FA-00EC8D6C9377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A4DD3F4-3DE6-4335-83FA-00EC8D6C9377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A4DD3F4-3DE6-4335-83FA-00EC8D6C9377}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E07CE988-C1FC-4F2A-B1AD-71683CAC8871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E07CE988-C1FC-4F2A-B1AD-71683CAC8871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E07CE988-C1FC-4F2A-B1AD-71683CAC8871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E07CE988-C1FC-4F2A-B1AD-71683CAC8871}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5173137D-5AE0-43BD-868F-E254A2FE61D1}
+	EndGlobalSection
+EndGlobal
