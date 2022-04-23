@@ -11,7 +11,6 @@ public class ConvertTimeTest
         IEnumerable<Zone> zones = convertTime.GetAllTimeZones();
 
         Assert.NotNull(zones);
-        Assert.Equal(141, zones.Count());
     }
 
     [Fact]
