@@ -1,4 +1,5 @@
 using ConvertTimeByZone.Core;
+using ConvertTimeByZone.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseLocalization();
 
 app.MapControllerRoute(
     name: "default",
